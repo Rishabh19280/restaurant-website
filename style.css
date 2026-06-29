@@ -1,0 +1,314 @@
+/* =========================
+   GOOGLE FONTS
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================
+   RESET CSS
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    color: #1F1F1F;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================
+   ROOT COLORS
+========================= */
+:root {
+    --primary-color: #23381F;
+    --secondary-color: #E67E22;
+    --background-color: #F6F3EE;
+    --dark-color: #1F1F1F;
+    --white: #FFFFFF;
+    --gap: 50px;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   SECTION PADDING
+========================= */
+section {
+    padding: 0 80px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+/* NAVBAR START */
+.nav-container {
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    z-index: 9999;
+    top: 0;
+    background-color: var(--background-color);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar #toggle {
+    font-size: 24px;
+    color: var(--primary-color);
+    display: none;
+}
+.navbar .nav-menu i
+{
+    font-size: 24px;
+    color: var(--white);
+    margin-right: 20px;
+    display: none;
+}
+
+/* NAVBAR LOGO START*/
+.navbar .company-logo {
+    height: 80px;
+    width: 150px;
+}
+
+.navbar .company-logo a img {
+    height: 100%;
+    width: 100%;
+}
+
+/* NAVBAR LOGO END*/
+
+
+
+
+/* NAVBAR MENU START*/
+
+.navbar .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+}
+
+.navbar .nav-menu li {
+    list-style: none;
+}
+
+.navbar .nav-menu li a {
+    display: inline-block;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-menu li a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* NAVBAR MENU END*/
+
+/* NAVBAR ACTION START */
+
+/* NAVBAR SHOPE CART START */
+.navbar .nav-actions {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.navbar .nav-actions .cart-icon {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-actions .cart-icon:hover {
+    transform: translateY(-3px);
+}
+
+.navbar .nav-actions .cart-icon i {
+    color: #23381F;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-actions .cart-icon:hover i {
+    transform: scale(1.15);
+}
+
+.navbar .nav-actions .cart-icon .cart-count {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    /* 100%{
+        transform: scale(1);
+    } */
+}
+
+.navbar .nav-actions .cart-icon .cart-count {
+    position: absolute;
+    top: -13px;
+    right: -9px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* NAVBAR SHOPE CART END */
+
+/* NAVBAR BOOKING TABLE START*/
+.navbar .nav-actions .book-table-btn,
+.navbar .nav-menu .book-table-btn{
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+.navbar .nav-menu .book-table-btn{
+    display: none;
+}
+
+.navbar .nav-actions .book-table-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+/* NAVBAR BOOKING TABLE END*/
+/* =========================
+   NAVBAR END
+========================= */
+/* =========================
+    
+========================= */
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+/* NAVBAR */
+/* Tablet */
+@media (max-width: 1024px) {
+    section {
+        padding: 0 20px;
+    }
+
+    .navbar .nav-menu,
+    .navbar .nav-actions {
+        gap: 20px;
+    }
+
+    .navbar .company-logo {
+        height: 65px;
+        width: 100px;
+    }
+
+    .navbar .nav-actions .book-table-btn {
+        padding: 0.5rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .navbar .company-logo {
+        height: 50px;
+        width: 100px;
+    }
+
+    .navbar .nav-menu,
+    .navbar .nav-actions {
+        gap: 15px;
+    }
+
+    .navbar .nav-menu li a {
+        font-size: 1rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+    .navbar #toggle {
+        display: block;
+    }
+
+    .navbar .nav-actions .book-table-btn {
+        display: none;
+    }
+
+    .navbar .company-logo {
+        height: 70px;
+        width: 150px;
+    }
+
+    .navbar .nav-menu {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 99999;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--primary-color);
+        align-items: flex-start;
+        padding:35px 40px 0 40px;
+        transform: translateX(100%);
+        transition: all 0.3s ease;
+    }
+
+    .navbar .nav-menu.active {
+        transform: translateX(0);
+    }
+
+    .navbar .nav-menu li a {
+        color: var(--white);
+    }
+    .navbar .nav-menu i{
+        display: inline-block;
+    }
+    .navbar .nav-menu .book-table-btn{
+        display: block;
+        background-color: var(--secondary-color);
+        padding: 0.5rem 2rem;
+        margin-top: 25px;
+    }
+}
